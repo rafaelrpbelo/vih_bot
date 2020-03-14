@@ -2,11 +2,15 @@ name: vih_bot
 version: 0.1.0
 
 authors:
-  - your-name-here <your-email-here>
+  - Rafael Belo <rafaelrpbelo@gmail.com>
 
 targets:
   vih_bot:
     main: src/vih_bot.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
 
 crystal: 0.33.0
 
