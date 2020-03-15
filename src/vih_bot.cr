@@ -24,17 +24,14 @@ module VihBot
 
     def set_routes
       post "/:token" do |env|
-        begin
-          message = env.params.json["message"]
+        logger.info("Params got: #{env.params.json.to_s}")
 
-          body = message.is_a?(Hash(String, JSON::Any)) ? message["text"] : ""
-          from = message.is_a?(Hash(String, JSON::Any)) ? message["from"] : { String => String }
+        message = env.params.json["message"]
 
-          username = from["username"]
-        rescue e : Exception
-          logger.error("Wrong parameters!")
-          halt env, status_code: 500, response: "Wrong parameters"
-        end
+        body = message.is_a?(Hash(String, JSON::Any)) ? message["text"] : ""
+        from = message.is_a?(Hash(String, JSON::Any)) ? message["from"] : { String => String }
+
+        username = from["username"]
 
         logger.info("I got a message from #{username}. Message: #{body}.")
 
