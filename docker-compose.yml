@@ -15,7 +15,7 @@ services:
     <<: *default_app
     ports:
       - 3000:3000
-    command: crystal run app.cr
+    command: crystal run src/vih_bot.cr
 
   play:
     <<: *default_app
