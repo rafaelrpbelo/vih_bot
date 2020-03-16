@@ -32,10 +32,9 @@ module VihBot
 
         if chat_id && text == "Hello Vih"
           {
-            sendMessage: {
-              chat_id: chat_id,
-              text: "Hi there! ;)"
-            }
+            method: "sendMessage",
+            chat_id: chat_id,
+            text: "Hi there! ;)"
           }.to_json
         else
           "OK"
