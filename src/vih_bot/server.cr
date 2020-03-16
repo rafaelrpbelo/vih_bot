@@ -31,6 +31,10 @@ module VihBot
         end
 
         if chat_id && text == "Hello Vih"
+          logger.info("Sending greetings! :D")
+
+          env.response.headers.add("Content-Type", "application/json")
+
           {
             method: "sendMessage",
             chat_id: chat_id,
