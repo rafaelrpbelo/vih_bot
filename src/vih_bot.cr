@@ -1,5 +1,8 @@
+require "kemal"
+require "json"
 require "logger"
 
+require "./vih_bot/request_handler"
 require "./vih_bot/server"
 
 module VihBot
@@ -15,4 +18,4 @@ module VihBot
   end
 end
 
-VihBot::Server.run
+VihBot::Server.listen
